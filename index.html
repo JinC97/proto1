@@ -8,11 +8,7 @@
     <meta name="theme-color" content="#020405">
     <title>FCU Simulator HTML — Standalone</title>
 
-    <!--
-        AUTO-GENERATED PORTABLE BUILD.
-        Maintain site/styles.css, site/data.js and site/app.js instead of editing
-        this file directly. Rebuild with: python tools/build_standalone.py
-    -->
+    <!-- Self-contained FCU trainer: styles, data and scripts are embedded. -->
     <style>
 /*
  * FCU HTML Trainer visual layer
@@ -8140,10 +8136,7 @@ window.FCU_DATA = {
     *   - Keep trainer/host diagnostics outside the FCU message panel.
     *   - The bundled calculation/table path is the fictional trainer model only.
     */
-    if('serviceWorker' in navigator && location.protocol!=='file:'){
-        navigator.serviceWorker.register('./sw.js').catch(()=>{
-        })
-    }
+    // Single-file deployment: no service worker or cloud hosting integration.
     const DATA=window.FCU_DATA;
     const P=DATA.coefficients;
     const SAMPLE=DATA.sample;
